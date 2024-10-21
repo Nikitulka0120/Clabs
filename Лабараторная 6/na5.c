@@ -13,23 +13,23 @@ int main(){
     int count=0;
     int min_index=0;
     int max_index=0;
-    for (int i=0; i<n;i++){
+    for (int i=0; i<n;i++){ //Сумма всех элементов
         sum+=a[i];
-        if (min > a[i]){
+        if (min > a[i]){ //Определение минимального элемента и его индекса
             min=a[i];
             min_index=i;
         }
-        if (max < a[i]){
+        if (max < a[i]){ //Определение максимального элемента и его индекса
             max=a[i];
             max_index=i;
         }
     }
-    int avg = sum/n;
+    int avg = sum/n; //Сумма среднего
     for (int i=0; i<n;i++){
         if(a[i]<avg){
-            count++;
+            count++; //Количество чисел меньше среднего
         }
-        if (min_index<max_index){
+        if (min_index<max_index){ //Зануление элементов между минимальным и максимальным
             if (min_index<i && i<max_index){
                 a[i]=0;
             }
