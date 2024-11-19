@@ -1,14 +1,21 @@
 #include<stdio.h>
 #include<time.h>
 #include<stdlib.h>
+#include<ctype.h>
 
 int manual(int N, int **arr) {
     int element;
-
+    int c;
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
-            printf("Введите элемент: ");
-            scanf("%d", &element);
+                printf("Введите элемент: ");
+                while (scanf("%d", &element) != 1) {
+                while (!isspace(c = getchar()));
+                ungetc(c, stdin);
+                printf("Вам нужно ввести одно целое число.\n");
+                continue;
+                }
+            
             arr[i][j] = element;
         }
     }
@@ -59,9 +66,15 @@ void find_min(int N, int **arr) {
     int sum = 0;
     int k = 0;
     int multiplier;
-
+    int c;
     printf("Введите число для умножения элементов квадрата: ");
-    scanf("%d", &multiplier);
+    while (scanf("%d", &multiplier) != 1) {
+        while (!isspace(c = getchar()));
+        ungetc(c, stdin);
+        printf("Вам нужно ввести одно целое число.\n");
+        continue;
+        }
+    
 
     for (int i = start_row; i <= end_row; i++) {
         for (int j = start_col; j <= end_col; j++) {
@@ -82,22 +95,26 @@ void find_min(int N, int **arr) {
 }
 
 int select_mode(int N) {
-    int mode;
+    int mode=0;
+    int c;
     int **arr = (int **)malloc(N * sizeof(int *));
     for (int i = 0; i < N; i++) {
         arr[i] = (int *)malloc(N * sizeof(int));
     }
 
     printf("Выберите режим заполнения матрицы\n1) Режим заполнения вручную\n2) Режим случайной генерации\nВвод: ");
-    scanf("%d", &mode);
+    
+    while (scanf("%d", &mode) != 1 || !(mode==1 || mode==2)) {
+        while (!isspace(c = getchar()));
+        ungetc(c, stdin);
+        printf("Вам нужно ввести 1 или 2\n");
+        continue;
+    }
     if (mode == 1) {
         manual(N, arr);
     } else if (mode == 2) {
         auto_generation(N, arr);
-    } else {
-        printf("Неверный режим.\n");
-        return 1;
-    }
+    } 
 
     printf("\nМатрица:\n");
     print_matrix(N, arr);
@@ -113,15 +130,16 @@ int select_mode(int N) {
 
 int main() {
     int n = 0;
+    int s=0;
+    int c;
     printf("Введите размер матрицы: ");
-    scanf("%d", &n);
-
-    if (n > 0) {
-        select_mode(n);
-    } else {
-        printf("Ошибка: размер матрицы должен быть положительным числом.\n");
+    while (scanf("%d", &n) != 1 || n<=0) {
+        while (!isspace(c = getchar()));
+        ungetc(c, stdin);
+        printf("Вам нужно ввести одно целое число.\n");
+        continue;
     }
-
+    
+    select_mode(n);
     return 0;
 }
-
