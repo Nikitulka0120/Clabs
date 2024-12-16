@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -shared -Wl,-soname,libbackground.so -o libbackground.so CMakeFiles/background.dir/background.c.o  -Wl,-rpath,"/mnt/c/Users/stern/Desktop/Практика 12/task1/build/pipes" ../pipes/libpipes.so 

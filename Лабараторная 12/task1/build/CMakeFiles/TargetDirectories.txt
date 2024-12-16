@@ -1,0 +1,9 @@
+/mnt/c/Users/stern/Desktop/Практика 12/task1/build/CMakeFiles/main.dir
+/mnt/c/Users/stern/Desktop/Практика 12/task1/build/CMakeFiles/edit_cache.dir
+/mnt/c/Users/stern/Desktop/Практика 12/task1/build/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/stern/Desktop/Практика 12/task1/build/background/CMakeFiles/background.dir
+/mnt/c/Users/stern/Desktop/Практика 12/task1/build/background/CMakeFiles/edit_cache.dir
+/mnt/c/Users/stern/Desktop/Практика 12/task1/build/background/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/stern/Desktop/Практика 12/task1/build/pipes/CMakeFiles/pipes.dir
+/mnt/c/Users/stern/Desktop/Практика 12/task1/build/pipes/CMakeFiles/edit_cache.dir
+/mnt/c/Users/stern/Desktop/Практика 12/task1/build/pipes/CMakeFiles/rebuild_cache.dir

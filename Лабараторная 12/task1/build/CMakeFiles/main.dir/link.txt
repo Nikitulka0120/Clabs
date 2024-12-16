@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/main.dir/src/main.c.o -o main  -Wl,-rpath,"/mnt/c/Users/stern/Desktop/Практика 12/task1/build/background:/mnt/c/Users/stern/Desktop/Практика 12/task1/build/pipes" background/libbackground.so pipes/libpipes.so 
